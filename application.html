@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp clone</title>
+    <script src="jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="starred.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="application.css">
+    <link rel="stylesheet" href="channels.css">
+    <link rel="stylesheet" href="account.css">
+    <link rel="shortcut icon" href="whatsapp_3670051.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="parent_container">
+    <div class="loader_page" id="loader_page">
+        <img src="social_13670447.png" width="80px">
+        <div class="meta_icon" id="meta">
+            <span>from</span>
+            <div style="display: flex; align-items: center;justify-content: center;"><img src="icons8-meta.svg">Meta</div>
+        </div>
+    </div>
+    <div class="application_container" id="application_container">
+        
+        <div class="titlebar" id="titlebar">
+            <p style="user-select: none;">WA Business</p>
+            <span class="fa fa-camera hoverble" aria-hidden="true">
+
+            </span>
+            <span class="fa fa-search hoverble" aria-hidden="true">
+
+            </span>
+            <span class="fa fa-ellipsis-v hoverble options_container" aria-hidden="true">
+                <ul id="options_and_settings">
+                    <li onclick="whatsapp_show_advertise()"><a >Advertise</a></li>
+                    <li onclick="whatsapp_show_business_tools()"><a >Business tools</a></li>
+                    <li onclick="whatsapp_show_new_group()"><a >New group</a></li>
+                    <li onclick="whatsapp_show_new_broadcast()"><a >New broadcast</a></li>
+                    <li onclick="whatsapp_show_communities()"><a >Communities</a></li>
+                    <li onclick="whatsapp_show_labels()"><a >Labels</a></li>
+                    <li onclick="whatsapp_show_linked_devices()"><a >Linked devices</a></li>
+                    <li onclick="whatsapp_show_stared_messages()"><a >Stared messages</a></li>
+                    <li onclick="whatsapp_show_settings()"><a >Settings</a></li>
+                </ul>
+            </span>
+        </div>
+        <div class="menubar">
+            <button  title="Business" id="whome" class="menubuttons material-symbols-outlined " style="font-size: 20px;" onmouseover="updateTitle(this,whatsapp_home,wchats,whatsapp_chats,wupdates,whatsapp_updates,wcalls,whatsapp_calls)">store</button>
+            <button title="Chats" id="wchats" class="menubuttons _chat" onmouseover="updateTitle(whome,whatsapp_home,this,whatsapp_chats,wupdates,whatsapp_updates,wcalls,whatsapp_calls)">Chats</button>
+            <button title="Updates" id="wupdates" class="menubuttons updates" onmouseover="updateTitle(whome,whatsapp_home,wchats,whatsapp_chats,this,whatsapp_updates,wcalls,whatsapp_calls)">Updates</button>
+            <button title="Calls" id="wcalls" class="menubuttons" onmouseover="updateTitle(whome,whatsapp_home,wchats,whatsapp_chats,wupdates,whatsapp_updates,this,whatsapp_calls)">Calls</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- home -->
+
+        <div id="whatsapp_home" class="">
+            <span style="font-size: 10px; color: rgba(255, 255, 255, 0.548); position: absolute; left: 5%; top:3%;">Grow your own Business</span>   
+            <div class="create_your_first_ad">
+                <span style="font-size: 18px;">Create your first ad from ksh146.59/ day</span>
+                <span style="font-size: 10px; color:rgba(255, 255, 255, 0.548) ;">Reach potential new customers with an ad that lets people start whatsapp chats with you</span>
+                <button>Get started</button>
+            </div>  
+            <div class="list_of_business_options">
+                <span style="font-size: 10px;color: rgba(255, 255, 255, 0.548);position: absolute;left: 2%; top: 2%;">Business tools</span>
+                <ul class="list_of_business_opt6ions_container">
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">store</span>
+                        <span class="business_home_options_span1">Business profile</span>
+                        <span class="business_home_options_span2">Manage adress, hours, and websites</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">apps</span>
+                        <span class="business_home_options_span1">Catalog</span>
+                        <span class="business_home_options_span2">Show products and services</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">campaign</span>
+                        <span class="business_home_options_span1">Advertise</span>
+                        <span class="business_home_options_span2">Create ads that lead to whatsapp</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">link</span>
+                        <span class="business_home_options_span1">Facebook & Instagram</span>
+                        <span class="business_home_options_span2">Add whatsapp to your accounts</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">3p</span>
+                        <span class="business_home_options_span1">Greeting message</span>
+                        <span class="business_home_options_span2">Welcome new customers automatically</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">beach_access</span>
+                        <span class="business_home_options_span1">Away message</span>
+                        <span class="business_home_options_span2">Reply automatically when you're away</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">electric_bolt</span>
+                        <span class="business_home_options_span1">Quick replies</span>
+                        <span class="business_home_options_span2">Reuse frequent messages</span>
+
+                    </li>
+                    <li class="business_home_options">
+                        <span class="material-symbols-outlined option_icon">label</span>
+                        <span class="business_home_options_span1">Labels</span>
+                        <span class="business_home_options_span2">Organize chats and customers</span>
+
+                    </li>
+                    <li class="business_home_options" style="border-top-style: solid;border-color:rgba(255, 255, 255, 0.548);border-width: 1px;">
+                        <span class="material-symbols-outlined option_icon">help</span>
+                        <span class="business_home_options_span1">Business help center</span>
+                        <span class="business_home_options_span2">Get help, contact us</span>
+
+                    </li>
+                </ul>
+            </div>       
+        </div>
+
+
+<!-- chats -->
+
+
+
+
+
+
+
+
+
+        <div class="chats" id="whatsapp_chats" >
+           
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- updates -->
+
+
+
+        <div id="whatsapp_updates" class="">
+            <div class="status">
+                <p>Status</p>
+                <button class="fa fa-ellipsis-v status_privacy">
+                    <ul>
+                        <li>
+                            <a href="#">Status privacy</a>
+                        </li>
+                    </ul>
+                </button>
+                <div class="status_container">
+                    <div class="my_status">
+                        <div class="my_status_img_container">
+                            <img src="17014521005395e4eaaec2ad542f59e90c95a2978aa8a_240.jpg.webp">
+                        </div>
+                        <div class="tap_to_add_status_update">
+                            <span style="font-size: 15px;">My status</span>
+                            <span style="margin-top: 10px;  font-size: 10px; color:rgba(255, 255, 255, 0.548) ;">Tap to add status update</span>
+                        </div>
+                    </div>
+                    <div class="recent_updates">
+                        <button class="fa view_more" id="view_more"></button>
+                        <span style="font-size: 12px; color:rgba(255, 255, 255, 0.548);">Viewed updates</span>
+                        <div class="each_recent_status" id="status_each">
+                            <div class="each_recent_status_img">
+                                <img src="17014521005395e4eaaec2ad542f59e90c95a2978aa8a_240.jpg.webp">
+                            </div>
+                            <div class="each_recent_update_name_and_date">
+                                <span style="font-size: 15px;">Contact Name</span>
+                                <span style="font-size: 10px; margin-top: 5%;color: rgba(255, 255, 255, 0.548);">Time uploaded</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chanels" id="channels">
+                    <span style="position: absolute; top: 0%; left: 2%;">Channels</span>
+                    <span class="material-symbols-outlined" style="position: absolute; right: 2%;top: 0%;">add</span>
+                    <!-- <span style="font-size: 10px; color: rgba(255, 255, 255, 0.548);">Stay up to date on topics that matter to you. Find channels to follow below</span> -->
+                    <!-- followed channels will apear here -->
+
+
+
+
+
+
+
+
+<div id="channels_followed">
+    <!-- THIS CONTENT IS AUTOMATED BY JAVASCRIPT -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="channels_wrapper" id="channels_wrapper"><!-- here the content is displayed by javascript --></div>
+                    <button class="explore_more">Explore more</button>
+                </div>
+               
+            </div>
+           
+           
+        </div>
+
+
+<!-- calls -->
+
+
+
+
+
+
+
+
+
+
+        <div id="whatsapp_calls" class="">
+            <div class="calls_container">
+                <button class="material-symbols-outlined">link</button>
+                <div class="create_call_link">
+                    <p>Create call link</p>
+                    <span>Share a link for your whatsApp call</span>
+                </div>
+            </div>
+            <div class="no_calls">
+                
+            To start calling contacts who have
+        WhatsApp, tap <i class="material-symbols-outlined">add_call</i> at the bottom of your
+                                screen.
+                
+            </div>
+        </div>
+        
+        <div class="wrap_overview" id="wrap_overview">
+            <div class="overview" id="overview">
+               
+            </div>
+        </div>
+        <button class="chat_button" id="chat_button"><img src="whatsapp-new-chat.svg"></button>
+        <button class="material-symbols-outlined" id="call_button">add_call</button>
+        <button class="pen_button material-symbols-outlined" id="edit_button">edit</button>
+        <button id="update_button" class="update_button fa fa-camera"></button>
+    </div>
+
+        <!-- This code executes when any chat is clicked -->
+        <div class="when_chat_clicked">
+            
+        </div>
+        
+
+
+        <!-- whatsapp settings -->
+        
+        <div class="whatsapp_settings" id="whatsapp_settings">
+            <div class="whatsapp_settings_title_bar">
+                <button class="exit_settings material-symbols-outlined" id="back_from_settings">arrow_back</button>
+                <span class="__settings">Settings</span>
+                <div class="search_more_settings" id="search_more_settings">
+                    <button class="material-symbols-outlined" id="hide_whatsapp_search_settings">arrow_back</button>
+                    <input type="text" placeholder="Search..." autofocus autocomplete="off" class="search_whatsapp_settings" id="search_whatsapp_settings">
+                </div>
+                <button class="settings_search_button  material-symbols-outlined" id="settings_search_button">search</button>
+            </div>     
+            <div class="account_settings">
+                <div class="whatsapp_account_profile_pic" id="whatsapp_account_profile_pic">
+                    <img src=" " id="profile_photo" class="">
+                    <div class="whatsapp_account_settings_options">
+                        <span class="whatsapp_settings_account_name">
+                            Jimmy
+                        </span>
+                        <span class="whatsapp_settings_account_description">
+                            Hey there! I am using whatsapp.
+                        </span>
+                        
+                    </div>
+                    <div class="whatsapp_account_auxillary_options">
+                        <button class="qr_code material-symbols-outlined">qr_code</button>
+                    </div>
+                </div>
+            </div>
+            <div class="real_whatsapp_settings">
+                <ul>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">key_vertical</span>
+                        <span class="setting_name">Account</span>
+                        <span class="setting_option">Security notifications, change number</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">lock</span>
+                        <span class="setting_name">Privacy</span>
+                        <span class="setting_option">Block contacts, disappearing massages</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">face</span>
+                        <span class="setting_name">Avatar</span>
+                        <span class="setting_option">Create, edit, profile photo</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">chat</span>
+                        <span class="setting_name">Chats</span>
+                        <span class="setting_option">Theme, wallpapers, chat history</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">notifications</span>
+                        <span class="setting_name">Notifications</span>
+                        <span class="setting_option">Security notifications, change number</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">data_usage</span>
+                        <span class="setting_name">Storage and data</span>
+                        <span class="setting_option">Network usage, auto-download</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">language</span>
+                        <span class="setting_name">App language</span>
+                        <span class="setting_option">English (device's language)</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">help</span>
+                        <span class="setting_name">Help</span>
+                        <span class="setting_option">Help center, contact us, privacy policy</span>
+                    </li>
+                    <li class="real_whatsapp_settings_container">
+                        <span class="setting_icon material-symbols-outlined">group</span>
+                        <span class="setting_name">Invite a friend</span>
+                        <span class="setting_option"></span>
+                    </li>
+                    
+                </ul>
+                <div class="from_meta">
+                    <span>From</span>
+                    <span>Meta</span>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- account details settings -->
+      <div class="account_details_settings" id="account_details_settings">
+        <div class="wrap_account_details_tool_bar">
+            <button class="material-symbols-outlined close_account_details_settings" id="close_account_details_settings">arrow_back</button>
+        </div>
+        <div class="profile_photo_actions">
+            <button class="material-symbols-outlined edit_profile_photo">edit</button>
+            <div class="account_settings_profile_image_container">
+                <img  id="account_settings_profile_photo_image" src="">
+            </div>
+            <button class="material-symbols-outlined">
+
+            </button>
+        </div>
+        <div class="boost_and_share_buttons">
+            <button class="boost"><span class="material-symbols-outlined">campaign</span>Boost<span></span></button>
+            <button class="share"><span class="material-symbols-outlined">share</span><span>Share</span></button>
+        </div>
+        <div class="account_settings_details">
+            <div class="descriptional">
+                <span class="material-symbols-outlined first_button">person</span>
+                <span class="text">Full stack Developer</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+            <div class="descriptional">
+                <span class="material-symbols-outlined first_button">category</span>
+                <span class="text">Shopping & retail</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+            <div class="descriptional">
+                <span class="material-symbols-outlined first_button">store</span>
+                <span class="text">Jimmy enterprises</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+            <div class="descriptional">
+                <span class="material-symbols-outlined first_button">pin_drop</span>
+                <span class="text">Nakuru, Kenya</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+        </div>
+        <div class="openning_days">
+            <button class="material-symbols-outlined">edit</button>
+            <div class="days">
+                <span class="material-symbols-outlined">schedule</span>
+                <table>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Closed</td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>08:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>08:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>08:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>08:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>08:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>08:00-18:00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="additionals">
+            <div class="descriptional">
+                <span class="material-symbols-outlined first_button">mail</span>
+                <span class="text">jameskariuki274007@gmail.com</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+            <div class="descriptional">
+                <span class="material-symbols-outlined first_button">public</span>
+                <span class="text">Website</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+            <button class="add_another_website">
+                Add another website
+            </button>
+        </div>
+        <div class="account_products">
+            <span>Products</span>
+            <button class="manage">Manage <span class="fa fa-angle-right" style="font-size: 15px;"></span></button>
+            <div class="account_product_container"></div>
+            <div class="account_product_container"></div>
+            <div class="account_product_container"></div>
+            <div class="account_product_container"></div>
+            <div class="account_product_container"></div>
+        </div>
+        <div class="facebook_intagram_link descriptional">
+            <span class="material-symbols-outlined">link</span>
+            <span style="font-size: 15px;color: rgba(255, 255, 255, 0.774);">Add Facebook or Instagram</span>
+        </div>
+        <div class="about_and_phone_number">
+            <span class="about_and_phone_number_number">About and phone number</span>
+            <div class="__account descriptional">
+                <span class="material-symbols-outlined">info</span>
+                <span style="margin-left: 10px;">Full stack Developer.</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+            <div class="phone_number descriptional">
+                <span class="material-symbols-outlined">phone</span>
+                <span style="margin-left: 10px;">+254 742 227147</span>
+                <button class="material-symbols-outlined">edit</button>
+            </div>
+        </div>
+      </div>
+
+
+      <!-- Whatsapp starred messages -->
+
+      <div class="whatsapp_stared_messages" id="whatsapp_stared_messages">
+        <div class="stared_messages_title_bar">
+            <button class="material-symbols-outlined" id="hide_stared_messages">arrow_back</button>
+            <span>Starred messages</span>
+        </div>
+        <img src="images/whatsappstarred.svg">
+        <span class="no_starred_messages">
+            Tap and hold on message in any <span>chat to star it, so you can easily find</span>it later
+        </span>
+      </div>
+
+    </div>
+    <script src="chats.js"></script>
+    <script src="channels.js"></script>
+    <script src="application.js"></script>
+    <script src="account.js"></script>
+
+</body>
+</html>
